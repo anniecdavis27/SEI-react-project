@@ -44,7 +44,7 @@ States:
     },
     {
       "state": "Arizona"
-    }, ...
+    }, ...}
 
     Cities: 
 
@@ -59,7 +59,7 @@ States:
     },
     {
       "city": "Alameda"
-    }, ...
+    }, ...}
 
     City Data: 
 
@@ -95,4 +95,6 @@ States:
       }
     }
   }
-} ...
+} ...}
+
+
