@@ -1,5 +1,5 @@
-# SEI-react-project
-Cirrus - an Air Pollution tracking app using the AirVisual API.
+# Cirrus
+An Air Pollution tracking app using the AirVisual API.
 
 ## API key:
 ts: timestamp<br />

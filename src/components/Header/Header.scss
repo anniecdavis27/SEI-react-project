@@ -1,0 +1,61 @@
+header {
+    width: 100%;
+}
+.navflex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 54);
+    color: #ffffff;
+    width: 100%;
+}
+
+.hamburger-btn {
+    width: 40px;
+    height: 40px;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5 ease-in-out;
+    cursor: pointer;
+}
+
+.hamburger-patty {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all .5 ease-in-out;
+    cursor: pointer;
+}
+
+.hamburger-patty::before,
+.hamburger-patty::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px; 
+    background-color: #ffffff;
+}
+
+.hamburger-patty::before {
+    transform: translateY(10px);
+}
+
+.hamburger-patty::after {
+    transform: translateY(-10px);
+}
+
+.hamburger-btn.open .hamburger-patty {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.hamburger-btn.open .hamburger-patty::before {
+    transform: rotate(-45deg) translate(35px, 35px)
+}
+
+.hamburger-btn.open .hamburger-patty::after {
+    transform: rotate(45deg) translate(35px, -35px)
+}
