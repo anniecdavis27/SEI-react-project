@@ -29,6 +29,10 @@ Component Map:
 
 https://flic.kr/p/2jfkcDs
 
+Wireframes:
+
+https://flic.kr/s/aHsmP58TYX
+
 API statuses: (copied from Imsomnia)
 
 States:
@@ -44,7 +48,7 @@ States:
     },
     {
       "state": "Arizona"
-    }, ...}
+    }, ...
 
     Cities: 
 
@@ -59,7 +63,7 @@ States:
     },
     {
       "city": "Alameda"
-    }, ...}
+    }, ...
 
     City Data: 
 
@@ -95,6 +99,15 @@ States:
       }
     }
   }
-} ...}
+} ...
+
+Checklist: High Priority
+- WireFrames
+- nav bar and footer
+- Build out components
+- build out routes
+- build .env file for API key
+- build out API calls and pass/display props appropriately
+- add styles
 
 
