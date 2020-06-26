@@ -2,17 +2,17 @@
 Cirrus - an Air Pollution tracking app using the AirVisual API.
 
 ## API key:
-ts: timestamp
-aqius: AQI value based on USA EPA standard
-aqicn: AQI value based on China MEP standard
-tp: temperature in Celcius
-tp_min: minimum temperature
-pr: atmospheric pressure in hPa
-hu: humidity
-ws: wind speed
-wd: wind direction
-ic: weather icon code
-mainus: main pollutant for US AQI
+ts: timestamp<br />
+aqius: AQI value based on USA EPA standard<br />
+aqicn: AQI value based on China MEP standard<br />
+tp: temperature in Celcius<br />
+tp_min: minimum temperature<br />
+pr: atmospheric pressure in hPa<br />
+hu: humidity<br />
+ws: wind speed<br />
+wd: wind direction<br />
+ic: weather icon code<br />
+mainus: main pollutant for US AQI<br />
 maincn: main pollutant for Chinese AQI
 
 ## Technologies
@@ -139,3 +139,4 @@ https://flic.kr/s/aHsmP58TYX
 | useDropdown | Custom hook that sets the dropdown for each of the parameters in Search Params. Not technically a component, but a significant piece of code |
 
 
+## Code Snippets:
