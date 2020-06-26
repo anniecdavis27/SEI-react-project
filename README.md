@@ -1,7 +1,7 @@
 # SEI-react-project
 Cirrus - an Air Pollution tracking app using the AirVisual API.
 
-API key:
+##API key:
 ts: timestamp
 aqius: AQI value based on USA EPA standard
 aqicn: AQI value based on China MEP standard
@@ -15,7 +15,7 @@ ic: weather icon code
 mainus: main pollutant for US AQI
 maincn: main pollutant for Chinese AQI
 
-Technologies to be used
+##Technologies to be used
 HTML
 CSS
 JavaScript
@@ -25,18 +25,18 @@ React
     - (Portals, time dependent)
 Redux
 
-Component Map:
+##Component Map:
 
 https://flic.kr/p/2jfkcDs
 
-Wireframes:
+##Wireframes:
 
 https://flic.kr/s/aHsmP58TYX
 
 API statuses: (copied from Imsomnia)
 
-States:
-
+##States:
+```
 {
   "status": "success",
   "data": [
@@ -49,9 +49,10 @@ States:
     {
       "state": "Arizona"
     }, ...
+```
 
     Cities: 
-
+```
     {
   "status": "success",
   "data": [
@@ -64,9 +65,10 @@ States:
     {
       "city": "Alameda"
     }, ...
+```
 
     City Data: 
-
+```
     {
   "status": "success",
   "data": {
@@ -100,8 +102,9 @@ States:
     }
   }
 } ...
+```
 
-Checklist: High Priority
+##MVP
 - WireFrames 2hrs
 - nav bar and footer 2hrs
 - Build out component structure 30mins
@@ -110,7 +113,20 @@ Checklist: High Priority
 - build out API calls and pass/display props appropriately for each component 10 hrs
 - add styles 5 hrs
 
-Low Priority
+PostMVP
 - Dark Mode
 
+Components: 
 
+
+| Component | Description | 
+| --- | :---: |  
+| App | This is the default page -- the CIRRUS logo links back to it -- it displays the users closest air quality based on IP address and sets the routing for the app | 
+| About | This is the about me page, it will link to my portfolio |
+| City Info | This component routes to a page that shows all the data for the city selected |
+| Modal | This is a modal that will pop up to let user know they are leaving the app when they click the link to my portfolio to demonstrate my understanding of portals |
+| Results | This component structures each data item in the results container |
+| Results Container | This is the component that holds all of the rendered search items from the search params |
+| Search Page | This is the search page that holds the search parameters as well as the results container |
+| Search Params | This component holds all of the search parameters |
+| useDropdown | Custom hook that sets the dropdown for each of the parameters in Search Params. Not technically a component, but a significant piece of code |
