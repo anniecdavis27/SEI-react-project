@@ -1,7 +1,7 @@
 # SEI-react-project
 Cirrus - an Air Pollution tracking app using the AirVisual API.
 
-##API key:
+## API key:
 ts: timestamp
 aqius: AQI value based on USA EPA standard
 aqicn: AQI value based on China MEP standard
@@ -15,9 +15,10 @@ ic: weather icon code
 mainus: main pollutant for US AQI
 maincn: main pollutant for Chinese AQI
 
-##Technologies to be used
+## Technologies
 HTML
 CSS
+SCSS
 JavaScript
 React
     - Hooks
@@ -25,17 +26,18 @@ React
     - (Portals, time dependent)
 Redux
 
-##Component Map:
+
+## Component Map:
 
 https://flic.kr/p/2jfkcDs
 
-##Wireframes:
+## Wireframes:
 
 https://flic.kr/s/aHsmP58TYX
 
-API statuses: (copied from Imsomnia)
+## API statuses: (copied from Imsomnia)
 
-##States:
+### States:
 ```
 {
   "status": "success",
@@ -51,7 +53,7 @@ API statuses: (copied from Imsomnia)
     }, ...
 ```
 
-    Cities: 
+### Cities: 
 ```
     {
   "status": "success",
@@ -67,7 +69,8 @@ API statuses: (copied from Imsomnia)
     }, ...
 ```
 
-    City Data: 
+
+###  City Data: 
 ```
     {
   "status": "success",
@@ -104,19 +107,23 @@ API statuses: (copied from Imsomnia)
 } ...
 ```
 
-##MVP
-- WireFrames 2hrs
-- nav bar and footer 2hrs
-- Build out component structure 30mins
-- build out routes 1hr
-- build .env file for API key 30mins
-- build out API calls and pass/display props appropriately for each component 10 hrs
-- add styles 5 hrs
+##  MVP
+| Task | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Wireframes: Mobile | H | 1 | 40min | 40min |
+| Wireframes: Desktop | H | 1 | -- | -- |
+| Build out Component Structure | H | 1 | 1h | 1h |
+| Build out routing| H | 1.5 | -- | -- |
+| Build out .env file for keys | H | .5 | -- | -- |
+| Call APIs and parse data | H | 5 | -- | --|
+| Build custom dropdown hook | M | 1 | -- | -- |
+| Pass data to appropriate Components | H | 4 | -- | -- |
+| Dark Mode | L | 2 | -- | -- |
+| Modal | L | 1 | -- | -- |
+| Styling | H | 10 | -- | -- |
+| Total | H | 45 | 44 | 44 |
 
-PostMVP
-- Dark Mode
-
-Components: 
+## Components: 
 
 
 | Component | Description | 
@@ -130,3 +137,5 @@ Components:
 | Search Page | This is the search page that holds the search parameters as well as the results container |
 | Search Params | This component holds all of the search parameters |
 | useDropdown | Custom hook that sets the dropdown for each of the parameters in Search Params. Not technically a component, but a significant piece of code |
+
+
