@@ -102,12 +102,12 @@ States:
 } ...
 
 Checklist: High Priority
-- WireFrames
-- nav bar and footer
-- Build out components
-- build out routes
-- build .env file for API key
-- build out API calls and pass/display props appropriately
-- add styles
+- WireFrames 2hrs
+- nav bar and footer 2hrs
+- Build out component structure 30mins
+- build out routes 1hr
+- build .env file for API key 30mins
+- build out API calls and pass/display props appropriately for each component 10 hrs
+- add styles 5 hrs
 
 
