@@ -110,4 +110,7 @@ Checklist: High Priority
 - build out API calls and pass/display props appropriately for each component 10 hrs
 - add styles 5 hrs
 
+Low Priority
+- Dark Mode
+
 

@@ -1,0 +1,1 @@
+//This component structures each data item in the results container
