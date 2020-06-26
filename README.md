@@ -16,14 +16,14 @@ mainus: main pollutant for US AQI
 maincn: main pollutant for Chinese AQI
 
 ## Technologies
-HTML
-CSS
-SCSS
-JavaScript
-React
-    - Hooks
-    - Router
-    - (Portals, time dependent)
+HTML <br />
+CSS<br />
+SCSS<br />
+JavaScript<br />
+React<br />
+    - Hooks<br />
+    - Router<br />
+    - (Portals, time dependent)<br />
 Redux
 
 
