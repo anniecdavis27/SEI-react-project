@@ -15,7 +15,7 @@ function Home() {
           setAqIPdata(json.data)
         }
         makeApiCall()
-      }, [])
+      }, [apiKey])
 
       //console.log(aqIPdata.current)
 
