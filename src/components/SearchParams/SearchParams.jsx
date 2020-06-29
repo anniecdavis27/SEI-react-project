@@ -28,6 +28,26 @@ function SearchParams(props) {
         setCity()
     }
 
+    // console.log(countryList)
+
+    //   const getStateList = (country, apiKey) => {
+    //     const aqStatesAPI = `https://api.airvisual.com/v2/states?country=${country}&key=${apiKey}`
+    //     fetch(aqStatesAPI)
+    //     .then( res => res.json.data())
+    //     .then( data => setStateList(data))
+    //   }
+
+    //   console.log(getStateList)
+
+    //   const getCityList = (country, city, apiKey) => {
+    //     const aqCityAPI = `https://api.airvisual.com/v2/cities?state=${state}&country=${country}&key=${apiKey}`
+    //     fetch(aqCityAPI)
+    //     .then( res => res.json.data())
+    //     .then( data => setCityList(data))
+    //   }
+
+    //   console.log(getCityList)
+
     const handleStateChange = e => {
         setState(e.target.value)
     }
