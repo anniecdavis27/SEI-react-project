@@ -77,12 +77,12 @@ useEffect( () => {
     <div className="App">
       <Header />
       <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route path='/search-city' render={routerProps => stateList ? <SearchPage {...routerProps} handleClick={handleClick} handleFilter={handleFilter} stateList={stateList} cityList={cityList} handleStateChange={handleStateChange} /> : null}/>
-      <Route path='/favorites' component={Favorites}/>
-      <Route path='/about' component={About}/>
+      <Route exact path='SEI-react-project/' component={Home}/>
+      <Route path='SEI-react-project/search-city' render={routerProps => stateList ? <SearchPage {...routerProps} handleClick={handleClick} handleFilter={handleFilter} stateList={stateList} cityList={cityList} handleStateChange={handleStateChange} /> : null}/>
+      <Route path='SEI-react-project/favorites' component={Favorites}/>
+      <Route path='SEI-react-project/about' component={About}/>
 
-      <Route path="/city/:city" render={routerProps => state && city ? <CityInfo {...routerProps} city={city} state={state}/>: null}/>
+      <Route path="SEI-react-project/city/:city" render={routerProps => state && city ? <CityInfo {...routerProps} city={city} state={state}/>: null}/>
       </Switch>
     </div>
   );
