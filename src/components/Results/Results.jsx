@@ -23,7 +23,7 @@ function Results(props) {
             return (
             <div className="city-item" key={item.city}>
                 <p>
-                <Link to={"SEI-react-project/city/" + item.city} onClick={() => props.handleClick(item.city)}>{item.city}</Link>
+                <Link to={"/city/" + item.city} onClick={() => props.handleClick(item.city)}>{item.city}</Link>
                 </p>
             </div>
             );
