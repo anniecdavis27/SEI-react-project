@@ -27,9 +27,9 @@ function Header() {
             <Link to="/search-city" id="search" className='header-item'>
                 <h1 className="nav-link-desktop" id="nav-one">Search City</h1>
             </Link>
-            <Link to="/favorites" id="favorites" className='header-item'>
+            {/* <Link to="/favorites" id="favorites" className='header-item'>
                 <h1 className="nav-link-desktop" id="nav-two">Favorites</h1>
-            </Link>
+            </Link> */}
             <Link to="/about" id="about" className='header-item'>
                 <h1 className="nav-link-desktop" id="nav-two">About Cirrus</h1>
             </Link>
@@ -41,9 +41,9 @@ function Header() {
             <Link to="/search-city" id="search" className='header-item'>
                 <h1 className="nav-link" id="nav-one">Search City</h1>
             </Link>
-            <Link to="/favorites" id="favorites" className='header-item'>
+            {/* <Link to="/favorites" id="favorites" className='header-item'>
                 <h1 className="nav-link" id="nav-two">Favorites</h1>
-            </Link>
+            </Link> */}
             <Link to="/about" id="about" className='header-item'>
                 <h1 className="nav-link" id="nav-two">About Cirrus</h1>
             </Link>

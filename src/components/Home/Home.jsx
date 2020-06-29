@@ -5,17 +5,15 @@ function Home() {
 
     const [aqIPdata, setAqIPdata] = useState({})
 
-    const apiKey = process.env.REACT_APP_API_KEY
-
     useEffect( () => {
-        const aqIPlocationAPI = `https://api.airvisual.com/v2/nearest_city?key=${apiKey}`
+        const aqIPlocationAPI = `https://api.airvisual.com/v2/nearest_city?key=${process.env.REACT_APP_API_KEY}`
         const makeApiCall = async () => {
           const res = await fetch(aqIPlocationAPI)
           const json = await res.json()
           setAqIPdata(json.data)
         }
         makeApiCall()
-      }, [apiKey])
+      }, [])
 
       //console.log(aqIPdata.current)
 

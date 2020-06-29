@@ -5,25 +5,15 @@ import './SearchPage.scss'
 
 function SearchPage(props) {
 
-    //const countriesData = props.aqCountriesData
-
-    // const [currentCountry, setCurrentCountry] = useState('')
-    // const [currentState, setCurrentState] = useState('')
-    // const [currentCity, setCurrentCity] = useState('')
-
-    
-
-    const handleClick = (country, state, city) => {
-
-        console.log('clicked')
-        // setCurrentCountry(country)
-        // setCurrentState(state)
-        // setCurrentCity(city)
-    }
+    const handleStateChange = props.handleStateChange
+    const stateList = props.stateList
+    const cityList = props.cityList
+    const handleFilter = props.handleFilter
+    const handleClick = props.handleClick
 
   return (
     <div className="search-page">
-        <SearchParams handleClick={handleClick} />
+        <SearchParams handleFilter={handleFilter} handleClick={handleClick} handleStateChange={handleStateChange} stateList={stateList} cityList={cityList} />
     </div>
   );
 }
