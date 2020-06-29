@@ -11,19 +11,9 @@ import Favorites from './components/Favorites/Favorites'
 //This is the default page -- the CIRRUS logo links back to it -- it displays the users closest air quality based on IP address and sets the routing for the app
 
 function App() {
-  const [aqCountriesData, setAqCountriesData] = useState([])
+  
 
-  const apiKey = process.env.REACT_APP_API_KEY
-
-  useEffect( () => {
-    const aqCountriesAPI = `https://api.airvisual.com/v2/countries?key=${apiKey}`
-    const makeApiCall = async () => {
-      const res = await fetch(aqCountriesAPI)
-      const json = await res.json()
-      setAqCountriesData(json.data)
-    }
-    makeApiCall()
-  }, [apiKey])
+  //const apiKey = process.env.REACT_APP_API_KEY
 
   //console.log(aqCountriesData)
 
@@ -32,7 +22,7 @@ function App() {
       <Header />
       <Switch>
       <Route exact path='/' component={Home}/>
-      <Route path='/search-city' render={routerProps => aqCountriesData ? <SearchPage {...routerProps} aqCountriesData={aqCountriesData}/> : null}/>
+      <Route path='/search-city' component={SearchPage}/>
       <Route path='/favorites' component={Favorites}/>
       <Route path='/about' component={About}/>
       </Switch>

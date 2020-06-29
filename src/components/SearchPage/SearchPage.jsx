@@ -1,11 +1,11 @@
 //This is the search page that holds the search parameters as well as the results container
-import React, { useState } from 'react';
+import React from 'react';
 import SearchParams from '../SearchParams/SearchParams'
 import './SearchPage.scss'
 
 function SearchPage(props) {
 
-    const countriesData = props.aqCountriesData
+    //const countriesData = props.aqCountriesData
 
     // const [currentCountry, setCurrentCountry] = useState('')
     // const [currentState, setCurrentState] = useState('')
@@ -23,7 +23,7 @@ function SearchPage(props) {
 
   return (
     <div className="search-page">
-        <SearchParams countriesData={countriesData} handleClick={handleClick} />
+        <SearchParams handleClick={handleClick} />
     </div>
   );
 }

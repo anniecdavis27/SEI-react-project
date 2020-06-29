@@ -5,11 +5,13 @@ import ResultsContainer from '../ResultsContainer/ResultsContainer'
 
 function SearchParams(props) {
 
-    const countriesData = props.countriesData
+    // const countriesData = props.countriesData
 
     //console.log(countriesData)
 
     const [country, setCountry] = useState('USA')
+    const [countryList, setCountryList] = useState()
+    const [countrySelected, setCountrySelected] = useState(false)
     const [stateList, setStateList] = useState()
     const [state, setState] = useState('California')
     const [cityList, setCityList] = useState()
@@ -18,12 +20,12 @@ function SearchParams(props) {
 
     const apiKey = process.env.REACT_APP_API_KEY
 
-    const countrySelect = countriesData.map(country => {
-         return <option>{country.country}</option>
-    }) 
-
     const handleCountryChange = e => {
         setCountry(e.target.value)
+        setCountrySelected(true)
+        console.log(countrySelected)
+        setState()
+        setCity()
     }
 
     const handleStateChange = e => {
@@ -34,6 +36,17 @@ function SearchParams(props) {
         setCity(e.target.value)
     }
 
+    useEffect( () => {
+        const aqCountriesAPI = `https://api.airvisual.com/v2/countries?key=${apiKey}`
+        const makeApiCall = async () => {
+          const res = await fetch(aqCountriesAPI)
+          const json = await res.json()
+          setCountryList(json.data)
+        }
+        makeApiCall()
+      }, [apiKey])
+
+      console.log(countryList)
     
     useEffect( () => {
         const aqStatesAPI = `https://api.airvisual.com/v2/states?country=${country}&key=${apiKey}`
@@ -59,13 +72,20 @@ function SearchParams(props) {
 
     console.log(cityList)
 
-    if (!stateList) {
+    if (!countryList) {
+        return <option>Loading...</option>
+    }   
+    let countrySelect = countryList.map(country => {
+        return <option>{country.country}</option>
+   }) 
+
+    if (!stateList || !country) {
         return <option>Loading...</option>
     }   let selectState = stateList.map(state => {
         return <option>{state.state}</option>
     })
 
-    if (!cityList) {
+    if (!cityList || !state || !country) {
         return <option>Loading...</option>
     }   let selectCity = cityList.map(city => {
         return <option>{city.city}</option>
@@ -83,13 +103,13 @@ function SearchParams(props) {
             <label htmlFor='states'>
                 Select a State:
                 <select value={state} onChange={handleStateChange} className='dropdown-form'>
-                    {selectState}
+                    {stateList ? selectState : null}
                 </select>
             </label>
             <label htmlFor='states'>
                 Select a City: 
                 <select value={city} onChange={handleCityChange} className='dropdown-form'>
-                    {selectCity}
+                    {stateList ? selectCity : null}
                 </select>
             </label>
         </form>
