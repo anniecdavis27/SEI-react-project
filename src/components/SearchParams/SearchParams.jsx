@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
 import './SearchParams.scss'
-import Results from '../Results/Results'
 
 function SearchParams(props) {
-
-    const handleClick = props.handleClick
 
     const [state, setState] = useState('California')
     const [cityValue, setCityValue] = useState('')
@@ -27,27 +24,6 @@ function SearchParams(props) {
     } 
 
     //console.log(city)
-
-    
-    
-
-    const handleFilterClick = e => {
-        e.preventDefault()
-
-        console.log('clicked')
-
-        // console.log(cityList)
-        // console.log(cityValue)
-
-        // let results = []
-        // if (!cityList) {
-        //     return <h1>Loading</h1>
-        // }   results = cityList.filter(el => {
-        //     return el.toLowerCase().includes(cityValue.toLowerCase())
-        // })
-        // console.log(results)
-        // setCityList(results)
-    }
 
     // const restoreState = e => {
     //     setCityList([props.cityList])
@@ -81,10 +57,9 @@ console.log(cityList)
                 Find City: <br /> {cityValue}
                 <input id='cities' type='text' value={cityValue} onChange={handleCityChange} placeholder='Filter Specific City' className='dropdown-form'></input>
             </label>
-            <button onClick={handleFilterClick}>Filter</button>
+            <button onClick={props.handleFilterClick}>Filter</button>
         </form>
         <br />
-        <Results cityList={cityList} handleClick={handleClick} />
     </div>
   );
 }

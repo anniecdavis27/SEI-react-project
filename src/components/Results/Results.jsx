@@ -17,11 +17,6 @@ function Results(props) {
 
     console.log(cityList)
 
-    // const handleClick = e =>
-
-    //console.log(cityList)
-
-
     if (!cityList) {
         return <h1>loading</h1>
     }
