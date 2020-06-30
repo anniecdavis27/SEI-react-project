@@ -19,7 +19,7 @@ function App() {
     const [state, setState] = useState('California')
     const [cityList, setCityList] = useState()
     const [city, setCity] = useState('')
-    const [cityFilter, setCityFilter] = useState('')
+    // const [cityFilter, setCityFilter] = useState('')
 
   //console.log(aqCountriesData)
 
@@ -42,9 +42,9 @@ console.log(state)
 
 //console.log(state)
 
-const handleFilter = city => {
-  setCityFilter(city)
-}
+// const handleFilter = city => {
+//   setCityFilter(city)
+// }
 
 const handleClick = city => {
   setCity(city)
@@ -74,7 +74,7 @@ useEffect( () => {
     makeApiCall()
   }, [state])
 
-  //console.log(cityList)
+  console.log(cityList)
 
 
   return (
@@ -82,7 +82,7 @@ useEffect( () => {
       <Header />
       <Switch>
       <Route exact path='/' component={Home}/>
-      <Route path='/search-city' render={routerProps => stateList ? <SearchPage {...routerProps} handleClick={handleClick} handleFilter={handleFilter} stateList={stateList} cityList={cityList} handleStateChange={handleStateChange} /> : null}/>
+      <Route path='/search-city' render={routerProps => stateList ? <SearchPage {...routerProps} handleClick={handleClick} stateList={stateList} cityList={cityList} handleStateChange={handleStateChange} /> : null}/>
       <Route path='/favorites' component={Favorites}/>
       <Route path='/about' component={About}/>
 

@@ -1,5 +1,3 @@
-// This component routes to a page that shows all the data for the city selected
-
 import React, {useState, useEffect} from 'react';
 import './CityInfo.scss'
 

@@ -18,7 +18,7 @@ function Home() {
       //console.log(aqIPdata.current)
 
       let currentInfo = aqIPdata ? aqIPdata.current: null
-      console.log(currentInfo)
+      //console.log(currentInfo)
 
       let currentImage = currentInfo ? currentInfo.weather.ic : null
       

@@ -1,4 +1,3 @@
-//This component holds all of the search parameters
 import React, {useState} from 'react';
 import './SearchParams.scss'
 import Results from '../Results/Results'
@@ -10,9 +9,9 @@ function SearchParams(props) {
     const [state, setState] = useState('California')
     const [cityValue, setCityValue] = useState('')
 
-    const [cityList, setCityList] = useState([...props.cityList])
+    // const [cityList, setCityList] = useState(props.cityList)
 
-    //const [cityList, setCityList] = useState(props.cityList)
+    const cityList = props.cityList
 
     const stateList = props.stateList
     
@@ -35,22 +34,24 @@ function SearchParams(props) {
     const handleFilterClick = e => {
         e.preventDefault()
 
-        console.log(cityList)
-        console.log(cityValue)
+        console.log('clicked')
 
-        let results = []
-        if (!cityList) {
-            return <h1>Loading</h1>
-        }   results = cityList.filter(el => {
-            return el.toLowerCase().includes(cityValue.toLowerCase())
-        })
-        console.log(results)
-        setCityList(results)
+        // console.log(cityList)
+        // console.log(cityValue)
+
+        // let results = []
+        // if (!cityList) {
+        //     return <h1>Loading</h1>
+        // }   results = cityList.filter(el => {
+        //     return el.toLowerCase().includes(cityValue.toLowerCase())
+        // })
+        // console.log(results)
+        // setCityList(results)
     }
 
-    const restoreState = e => {
-        setCityList([...props.cityList])
-    }
+    // const restoreState = e => {
+    //     setCityList([props.cityList])
+    // }
 
 
 if (!stateList) {
@@ -58,6 +59,8 @@ if (!stateList) {
 }   let selectState = stateList.map(state => {
     return <option>{state.state}</option>
 })
+
+console.log(cityList)
 
   return (
     <div>
@@ -81,7 +84,7 @@ if (!stateList) {
             <button onClick={handleFilterClick}>Filter</button>
         </form>
         <br />
-        <Results cityList={cityList} handleClick={handleClick} restoreState={restoreState} />
+        <Results cityList={cityList} handleClick={handleClick} />
     </div>
   );
 }

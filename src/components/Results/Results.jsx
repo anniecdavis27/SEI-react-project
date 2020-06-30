@@ -1,5 +1,5 @@
 
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 import './Results.scss'
 
@@ -13,22 +13,22 @@ function Results(props) {
     // console.log(city)
     let cityList = props.cityList
 
-    const restoreState = props.restoreState
+    // const restoreState = props.restoreState
+
+    console.log(cityList)
 
     // const handleClick = e =>
 
     //console.log(cityList)
 
-    
 
-    let displayList = ''
-
-    if (cityList) {
-        displayList = cityList.map(item => {
+    if (!cityList) {
+        return <h1>loading</h1>
+    }
+        let displayList = cityList.map(item => {
 
             const onClickMultiTask = () => {
                 props.handleClick(item)
-                restoreState()
             }
 
             return (
@@ -37,7 +37,9 @@ function Results(props) {
             </div>
             );
         });
-    }
+    
+
+    console.log(displayList)
 
   return (
     <div className='results-container'>
