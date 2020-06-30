@@ -8,10 +8,14 @@ function SearchParams(props) {
     const handleClick = props.handleClick
 
     const [state, setState] = useState('California')
-    const [city, setCity] = useState('')
+    const [cityValue, setCityValue] = useState('')
+
+    const [cityList, setCityList] = useState([...props.cityList])
+
+    //const [cityList, setCityList] = useState(props.cityList)
 
     const stateList = props.stateList
-    const cityList = props.cityList
+    
 
     const handleStateChange = e => {
         setState(e.target.value)
@@ -19,13 +23,33 @@ function SearchParams(props) {
     }
 
     const handleCityChange = e => {
-        setCity(e.target.value)
+        setCityValue(e.target.value)
+        //cityList.filter(element => element.city.includes(e.target.value))
     } 
 
+    //console.log(city)
 
-    const handleFilter = e => {
+    
+    
+
+    const handleFilterClick = e => {
         e.preventDefault()
-        props.handleFilter()
+
+        console.log(cityList)
+        console.log(cityValue)
+
+        let results = []
+        if (!cityList) {
+            return <h1>Loading</h1>
+        }   results = cityList.filter(el => {
+            return el.toLowerCase().includes(cityValue.toLowerCase())
+        })
+        console.log(results)
+        setCityList(results)
+    }
+
+    const restoreState = e => {
+        setCityList([...props.cityList])
     }
 
 
@@ -51,13 +75,13 @@ if (!stateList) {
                 </select>
             </label>
             <label htmlFor='cities'>
-                Find City: <br />
-                <input id='cities' type='text' value={city} onChange={handleCityChange} placeholder='Filter Specific City' className='dropdown-form'></input>
+                Find City: <br /> {cityValue}
+                <input id='cities' type='text' value={cityValue} onChange={handleCityChange} placeholder='Filter Specific City' className='dropdown-form'></input>
             </label>
-            <button onClick={handleFilter}>Filter</button>
+            <button onClick={handleFilterClick}>Filter</button>
         </form>
         <br />
-        <Results cityList={cityList} handleClick={handleClick} />
+        <Results cityList={cityList} handleClick={handleClick} restoreState={restoreState} />
     </div>
   );
 }

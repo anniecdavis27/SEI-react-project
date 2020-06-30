@@ -7,9 +7,17 @@ function SearchPage(props) {
 
     const handleStateChange = props.handleStateChange
     const stateList = props.stateList
-    const cityList = props.cityList
+    
     const handleFilter = props.handleFilter
     const handleClick = props.handleClick
+
+    if (!props.cityList) {
+        return <h1>loading</h1>
+    } const cityList = props.cityList.map(el => {
+        return el.city
+    })
+
+    console.log(cityList)
 
   return (
     <div className="search-page">

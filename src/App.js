@@ -40,6 +40,8 @@ const handleStateChange = state => {
 
 console.log(state)
 
+//console.log(state)
+
 const handleFilter = city => {
   setCityFilter(city)
 }
@@ -48,7 +50,7 @@ const handleClick = city => {
   setCity(city)
 }
 
-console.log(city)
+//console.log(city)
 
 useEffect( () => {
     const aqStatesAPI = `https://api.airvisual.com/v2/states?country=USA&key=${process.env.REACT_APP_API_KEY}`
@@ -71,6 +73,8 @@ useEffect( () => {
     }
     makeApiCall()
   }, [state])
+
+  //console.log(cityList)
 
 
   return (

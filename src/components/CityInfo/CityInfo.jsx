@@ -28,7 +28,7 @@ function CityInfo(props) {
 
 
   return (
-    <div class='home'>
+    <div className='home'>
        <div className='data-container'>
             <h2 className='city-state'>City: {cityInfo.city}, {cityInfo.state}, {cityInfo.country}</h2>
             <h2>Current Weather:</h2>

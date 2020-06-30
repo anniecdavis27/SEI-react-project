@@ -1,6 +1,7 @@
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom'
+import './Results.scss'
 
 function Results(props) {
 
@@ -12,26 +13,34 @@ function Results(props) {
     // console.log(city)
     let cityList = props.cityList
 
+    const restoreState = props.restoreState
+
     // const handleClick = e =>
 
     //console.log(cityList)
+
+    
 
     let displayList = ''
 
     if (cityList) {
         displayList = cityList.map(item => {
+
+            const onClickMultiTask = () => {
+                props.handleClick(item)
+                restoreState()
+            }
+
             return (
-            <div className="city-item" key={item.city}>
-                <p>
-                <Link to={"/city/" + item.city} onClick={() => props.handleClick(item.city)}>{item.city}</Link>
-                </p>
+            <div key={item} className="city-item">
+                <Link to={"/city/" + item} onClick={onClickMultiTask} className='city-item-link'><br></br>{item}</Link>
             </div>
             );
         });
     }
 
   return (
-    <div>
+    <div className='results-container'>
         {displayList}
     </div>
   );
