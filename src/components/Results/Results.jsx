@@ -44,9 +44,9 @@ function Results(props) {
                 }
     
                 return (
-                <div key={item} className="city-item">
+                <h2 key={item} className="city-item">
                     <Link to={"/city/" + item} onClick={onClickMultiTask} className='city-item-link'><br></br>{item}</Link>
-                </div>
+                </h2>
                 );
             });
 
