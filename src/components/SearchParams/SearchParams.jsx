@@ -34,7 +34,7 @@ function SearchParams(props) {
     const handleFilterClick = e => {
         e.preventDefault()
         props.handleFilterClick()
-        //setCityValue('')
+        setCityValue('')
     }
 
 
@@ -61,13 +61,13 @@ if (!stateList) {
                 <select value={state} onChange={handleStateChange} className='dropdown-form'>
                     {stateList ? selectState : null}
                 </select>
-                {/* <button onClick={handleFilterClick}>Filter by State</button> */}
+                <button onClick={handleFilterClick}>Show Cities</button>
             </label>
             <label htmlFor='cities'>
                 Find City: <br />
                 <input id='cities' type='text' value={cityValue} onChange={handleCityChange} placeholder='Filter Specific City' className='dropdown-form'></input>
             </label>
-            <button onClick={handleFilterClick}>Filter by City</button>
+            <button onClick={handleFilterClick}>Filter Cities</button>
         </form>
         <br />
     </div>
