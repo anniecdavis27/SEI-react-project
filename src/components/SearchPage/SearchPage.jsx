@@ -7,11 +7,19 @@ import Results from '../Results/Results'
 function SearchPage(props) {
 
     const [cityValue, setCityValue] = useState('')
+    const [newCityList, setNewCityList] = useState([])
     const handleStateChange = props.handleStateChange
     const stateList = props.stateList
     
-    const handleFilter = props.handleFilter
     const handleClick = props.handleClick
+
+    const handleCityChange = city => {
+        setCityValue(city)
+        //cityList.filter(element => element.city.includes(e.target.value))
+        console.log(cityValue)
+    } 
+
+    console.log(cityValue)
 
     if (!props.cityList) {
         return <h1>loading</h1>
@@ -19,32 +27,36 @@ function SearchPage(props) {
         return el.city
     })
 
-    console.log(cityList)
+    //console.log(cityList)
 
     const handleFilterClick = e => {
-        e.preventDefault()
 
         console.log('clicked')
 
-        // console.log(cityList)
-        // console.log(cityValue)
+        console.log(cityList)
+        console.log(cityValue)
 
-        // let results = []
-        // if (!cityList) {
-        //     return <h1>Loading</h1>
-        // }   results = cityList.filter(el => {
-        //     return el.toLowerCase().includes(cityValue.toLowerCase())
-        // })
-        // console.log(results)
-        // setCityList(results)
+        if (!cityList) {
+            return <h1>Loading</h1>
+        }   let results = cityList.filter(el => {
+            return el.toLowerCase().includes(cityValue.toLowerCase())
+        })
+        console.log(results)
+        setNewCityList(results)
     }
+
+    console.log(newCityList)
 
     
 
   return (
     <div className="search-page">
-        <SearchParams handleFilterClick={handleFilterClick} handleClick={handleClick} handleStateChange={handleStateChange} stateList={stateList} cityList={cityList} />
-        <Results cityList={cityList} />
+        <div className='search-params-container'>
+            <SearchParams handleFilterClick={handleFilterClick} handleClick={handleClick} handleCityChange={handleCityChange} handleStateChange={handleStateChange} stateList={stateList} cityList={cityList} />
+        </div>
+        <div className='results-container'>
+            <Results cityList={cityList} newCityList={newCityList} handleClick={handleClick} />
+        </div>
     </div>
   );
 }

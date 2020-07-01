@@ -13,9 +13,12 @@ function Results(props) {
     // console.log(city)
     let cityList = props.cityList
 
+    let resultsList = props.newCityList 
+    console.log(resultsList)
+
     // const restoreState = props.restoreState
 
-    console.log(cityList)
+    //console.log(cityList)
 
     if (!cityList) {
         return <h1>loading</h1>
@@ -32,13 +35,31 @@ function Results(props) {
             </div>
             );
         });
+
+        
+            let updatedDisplayList = resultsList.map(item => {
+    
+                const onClickMultiTask = () => {
+                    props.handleClick(item)
+                }
+    
+                return (
+                <div key={item} className="city-item">
+                    <Link to={"/city/" + item} onClick={onClickMultiTask} className='city-item-link'><br></br>{item}</Link>
+                </div>
+                );
+            });
+
+            console.log(updatedDisplayList)
     
 
     console.log(displayList)
 
   return (
     <div className='results-container'>
-        {displayList}
+        {resultsList.length > 0 ? updatedDisplayList : displayList}
+        {/* {updatedDisplayList} */}
+        {/* {displayList} */}
     </div>
   );
 }

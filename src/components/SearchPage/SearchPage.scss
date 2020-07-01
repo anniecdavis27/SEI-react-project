@@ -3,4 +3,30 @@
     flex-direction: column;
     width: 90%;
     margin: 20px auto;
+    height: 900px;
 }
+
+.results-container {
+    overflow-y: auto;
+}
+
+.results-container {
+    overflow: auto;
+    width: 100%;
+}
+
+@media (orientation: landscape) {
+    .search-page {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .results-container {
+        width: 100%;
+    }
+
+    .search-params-container {
+        margin-right: 50px;
+    }
+
+  }

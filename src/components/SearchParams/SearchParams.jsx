@@ -20,6 +20,8 @@ function SearchParams(props) {
 
     const handleCityChange = e => {
         setCityValue(e.target.value)
+        props.handleCityChange(e.target.value)
+        
         //cityList.filter(element => element.city.includes(e.target.value))
     } 
 
@@ -29,6 +31,13 @@ function SearchParams(props) {
     //     setCityList([props.cityList])
     // }
 
+    const handleFilterClick = e => {
+        e.preventDefault()
+        props.handleFilterClick()
+        //setCityValue('')
+    }
+
+
 
 if (!stateList) {
     return <option>Loading...</option>
@@ -36,7 +45,7 @@ if (!stateList) {
     return <option>{state.state}</option>
 })
 
-console.log(cityList)
+//console.log(cityList)
 
   return (
     <div>
@@ -52,12 +61,13 @@ console.log(cityList)
                 <select value={state} onChange={handleStateChange} className='dropdown-form'>
                     {stateList ? selectState : null}
                 </select>
+                {/* <button onClick={handleFilterClick}>Filter by State</button> */}
             </label>
             <label htmlFor='cities'>
-                Find City: <br /> {cityValue}
+                Find City: <br />
                 <input id='cities' type='text' value={cityValue} onChange={handleCityChange} placeholder='Filter Specific City' className='dropdown-form'></input>
             </label>
-            <button onClick={props.handleFilterClick}>Filter</button>
+            <button onClick={handleFilterClick}>Filter by City</button>
         </form>
         <br />
     </div>

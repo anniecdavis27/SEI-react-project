@@ -5,8 +5,9 @@ import Header from './components/Header/Header'
 import Home from './components/Home/Home'
 import SearchPage from './components/SearchPage/SearchPage'
 import About from './components/About/About'
-import Favorites from './components/Favorites/Favorites'
+// import Favorites from './components/Favorites/Favorites'
 import CityInfo from './components/CityInfo/CityInfo'
+import Footer from './components/Footer/Footer'
 
 
 //This is the default page -- the CIRRUS logo links back to it -- it displays the users closest air quality based on IP address and sets the routing for the app
@@ -83,11 +84,12 @@ useEffect( () => {
       <Switch>
       <Route exact path='/' component={Home}/>
       <Route path='/search-city' render={routerProps => stateList ? <SearchPage {...routerProps} handleClick={handleClick} stateList={stateList} cityList={cityList} handleStateChange={handleStateChange} /> : null}/>
-      <Route path='/favorites' component={Favorites}/>
+      {/* <Route path='/favorites' component={Favorites}/> */}
       <Route path='/about' component={About}/>
 
       <Route path="/city/:city" render={routerProps => state && city ? <CityInfo {...routerProps} city={city} state={state}/>: null}/>
       </Switch>
+      <Footer />
     </div>
   );
 }

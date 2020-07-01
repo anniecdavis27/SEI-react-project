@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.home {
+.city-info {
     font-family: 'Montserrat', sans-serif;
-    color: rgb(0, 0, 54);
+    color: #ffffff;
     text-align: center; 
+}
+
+.city-state {
+    font-size: 25px;
+}
+
+.inner-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -19,12 +30,41 @@ p {
 }
 
 .data-container {
-    border: 1px dashed rgb(0, 0, 54);
     margin: 30px 30px;
-    box-shadow: 2px 3px rgba(0, 0, 54, .4);
-    background-color: rgb(231, 255, 255);;
+    background-color: #ffffff;
+    color: rgb(0, 0, 54);
+    border: 3px outset rgb(0, 0, 54);
+    padding: 30px;
 }
 
 img {
     width: 200px;
 }
+
+.info-content {
+    text-align: left;
+    width: 300px;
+}
+
+@media (orientation: landscape) {
+    .data-container {
+        margin: 30px 30px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 54);
+        border: 5px outset rgb(0, 0, 54);
+        padding: 30px;
+    }
+
+    .inner-container {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .info-content {
+        text-align: center;
+    }
+
+    .city-state {
+        font-size: 35px;
+    }
+  }
