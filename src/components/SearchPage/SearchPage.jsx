@@ -15,8 +15,6 @@ function SearchPage(props) {
 
     const handleCityChange = city => {
         setCityValue(city)
-        //cityList.filter(element => element.city.includes(e.target.value))
-        console.log(cityValue)
     } 
 
     console.log(cityValue)
@@ -27,27 +25,15 @@ function SearchPage(props) {
         return el.city
     })
 
-    //console.log(cityList)
-
     const handleFilterClick = e => {
-
-        console.log('clicked')
-
-        console.log(cityList)
-        console.log(cityValue)
 
         if (!cityList) {
             return <h1>Loading</h1>
         }   let results = cityList.filter(el => {
             return el.toLowerCase().includes(cityValue.toLowerCase())
         })
-        console.log(results)
         setNewCityList(results)
     }
-
-    console.log(newCityList)
-
-    
 
   return (
     <div className="search-page">

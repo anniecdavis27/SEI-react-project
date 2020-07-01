@@ -48,7 +48,6 @@ function Header() {
                 <h1 className="nav-link" id="nav-two" onClick={handleMenuToggle}>About Cirrus</h1>
             </Link>
             </div>
-            
         </header>
     );
 }

@@ -2,7 +2,6 @@
 
 .city-info {
     font-family: 'Montserrat', sans-serif;
-    color: #ffffff;
     text-align: center; 
 }
 
@@ -31,9 +30,7 @@ p {
 
 .data-container {
     margin: 0px 30px;
-    background-color: #ffffff;
-    color: rgb(0, 0, 54);
-    border: 3px outset rgb(0, 0, 54);
+    border: 3px solid;
     border-top: none;
     padding: 30px;
 }
@@ -50,9 +47,7 @@ img {
 @media (orientation: landscape) {
     .data-container {
         margin: 0px 30px;
-        background-color: #ffffff;
-        color: rgb(0, 0, 54);
-        border: 5px outset rgb(0, 0, 54);
+        border: 5px solid;
         border-top: none;
         padding: 30px;
     }
@@ -73,7 +68,6 @@ img {
 
   @media only screen and (min-width: 760px) {
     .info-content {
-        width: 50%;
         margin: auto
     }
 }

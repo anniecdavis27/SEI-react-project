@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
 import './SearchParams.scss'
+import styled, { withTheme } from 'styled-components';
+import { buttonBackgroundColor, buttonTextColor } from '../../theme';
 
 function SearchParams(props) {
+
+    const Button = styled.button`
+    background: ${buttonBackgroundColor};
+    color: ${buttonTextColor};
+  `;
 
     const [state, setState] = useState('California')
     const [cityValue, setCityValue] = useState('')
 
-    // const [cityList, setCityList] = useState(props.cityList)
-
-    const cityList = props.cityList
-
     const stateList = props.stateList
-    
 
     const handleStateChange = e => {
         setState(e.target.value)
@@ -21,15 +23,7 @@ function SearchParams(props) {
     const handleCityChange = e => {
         setCityValue(e.target.value)
         props.handleCityChange(e.target.value)
-        
-        //cityList.filter(element => element.city.includes(e.target.value))
     } 
-
-    //console.log(city)
-
-    // const restoreState = e => {
-    //     setCityList([props.cityList])
-    // }
 
     const handleFilterClick = e => {
         e.preventDefault()
@@ -39,39 +33,32 @@ function SearchParams(props) {
 
 
 
-if (!stateList) {
-    return <option>Loading...</option>
-}   let selectState = stateList.map(state => {
-    return <option>{state.state}</option>
-})
+    if (!stateList) {
+        return <option>Loading...</option>
+    }   let selectState = stateList.map(state => {
+        return <option>{state.state}</option>
+    })
 
-//console.log(cityList)
 
   return (
     <div>
         <form>
-            {/* <label htmlFor='countries'>
-                Select a Country: 
-                <select value={country} onChange={handleCountryChange} className='dropdown-form'>
-                    {countrySelect}
-                </select>
-            </label> */}
             <label htmlFor='states'>
                 Select a State:
                 <select value={state} onChange={handleStateChange} className='dropdown-form'>
                     {stateList ? selectState : null}
                 </select>
-                <button onClick={handleFilterClick}>Show Cities</button>
+                <Button onClick={handleFilterClick}>Show Cities</Button>
             </label>
             <label htmlFor='cities'>
                 Find City: <br />
                 <input id='cities' type='text' value={cityValue} onChange={handleCityChange} placeholder='Filter Specific City' className='dropdown-form'></input>
             </label>
-            <button onClick={handleFilterClick}>Filter Cities</button>
+            <Button onClick={handleFilterClick}>Filter Cities</Button>
         </form>
         <br />
     </div>
   );
 }
 
-export default SearchParams;
+export default withTheme(SearchParams);
