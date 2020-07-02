@@ -179,8 +179,10 @@ const [themeState, setThemeState] = useState({
         const mode = (themeState.mode === 'light' ? `dark` : `light`);
         setThemeState({ mode: mode });
     };
-    ```
+    
+```
+    
 
-    ## Improvements
+## Improvements
 
-    The only improvement that needs to be made is that the city info pages lose their state if re-rendered. It does not throw an error, but it does cause a UI bug. This was not so apparent without dark mode, but since dark mode re-renders the page, the information does not re-load if you toggle to dark mode on that page. For now, I have put a note on the page that dark mode doesnt work there, but I plan on figuring out how to troubleshoot this UI bug. 
+The only improvement that needs to be made is that the city info pages lose their state if re-rendered. It does not throw an error, but it does cause a UI bug. This was not so apparent without dark mode, but since dark mode re-renders the page, the information does not re-load if you toggle to dark mode on that page. For now, I have put a note on the page that dark mode doesnt work there, but I plan on figuring out how to troubleshoot this UI bug. 
