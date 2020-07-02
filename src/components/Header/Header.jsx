@@ -4,7 +4,8 @@ import './Header.scss';
 
 //This is the default page -- the CIRRUS logo links back to it -- it displays the users closest air quality based on IP address and sets the routing for the app
 
-function Header() {
+function Header(props) {
+
     const [menuStatus, setMenuStatus] = useState(false)
     const [showMenu, setShowMenu] = useState(false)
 
@@ -17,22 +18,25 @@ function Header() {
             setShowMenu(false)
          }
     }
+
+    const themeToggle = props.themeToggle
     
     return (
         <header>
             <nav className='navflex'>
             <Link to="/" id="home" className='header-item'>
-                <h1 id='logo' onClick={showMenu ? handleMenuToggle : null}>CIR<span>R</span>US</h1>
+                <h1 id='logo' onClick={showMenu ? handleMenuToggle : null}>CIRRUS</h1>
             </Link>
             <Link to="/search-city" id="search" className='header-item'>
                 <h1 className="nav-link-desktop" id="nav-one" onClick={handleMenuToggle}>Search City</h1>
             </Link>
-            {/* <Link to="/favorites" id="favorites" className='header-item'>
-                <h1 className="nav-link-desktop" id="nav-two">Favorites</h1>
-            </Link> */}
+
             <Link to="/about" id="about" className='header-item'>
                 <h1 className="nav-link-desktop" id="nav-two" onClick={handleMenuToggle}>About Cirrus</h1>
             </Link>
+            <h1 onClick={() => themeToggle.toggle()} className='nav-link-desktop' id='nav-three'>
+                DarkMode
+            </h1>
                 <div className={`hamburger-btn ${menuStatus ? 'open' : ''}`} onClick={handleMenuToggle}>
                     <div className="hamburger-patty"></div>
                 </div>
@@ -41,12 +45,12 @@ function Header() {
             <Link to="/search-city" id="search" className='header-item'>
                 <h1 className="nav-link" id="nav-one" onClick={handleMenuToggle}>Search City</h1>
             </Link>
-            {/* <Link to="/favorites" id="favorites" className='header-item'>
-                <h1 className="nav-link" id="nav-two">Favorites</h1>
-            </Link> */}
             <Link to="/about" id="about" className='header-item'>
                 <h1 className="nav-link" id="nav-two" onClick={handleMenuToggle}>About Cirrus</h1>
             </Link>
+            <h1 onClick={() => themeToggle.toggle()} className='nav-link'>
+                DarkMode
+            </h1>
             </div>
         </header>
     );

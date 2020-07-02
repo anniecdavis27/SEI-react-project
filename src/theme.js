@@ -29,3 +29,13 @@ export const resultBackgroundColor = theme('mode', {
     light: '#edfeff',
     dark: '#edfeff'
   });
+
+  export const footerBackgroundColor = theme('mode', {
+    light: '#ffffff',
+    dark: '#000224'
+  });
+  
+  export const footerTextColor = theme('mode', {
+    light: '#000224',
+    dark: '#ffffff'
+  });

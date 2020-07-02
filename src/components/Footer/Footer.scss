@@ -5,8 +5,10 @@
     visibility: hidden;
     padding: 5px 15px;
     border-top: 5px solid;
-    margin-top: 60px;
     height: 75px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }
 
 @media only screen and (min-width: 760px) {
