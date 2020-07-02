@@ -1,8 +1,8 @@
 //This is the search page that holds the search parameters as well as the results container
 import React, {useState} from 'react';
-import SearchParams from '../SearchParams/SearchParams'
-import './SearchPage.scss'
-import Results from '../Results/Results'
+import SearchParams from '../SearchParams/SearchParams';
+import './SearchPage.scss';
+import Results from '../Results/Results';
 
 function SearchPage(props) {
 
@@ -10,14 +10,11 @@ function SearchPage(props) {
     const [newCityList, setNewCityList] = useState([])
     const handleStateChange = props.handleStateChange
     const stateList = props.stateList
-    
     const handleClick = props.handleClick
-
+    
     const handleCityChange = city => {
         setCityValue(city)
     } 
-
-    console.log(cityValue)
 
     if (!props.cityList) {
         return <h1>loading</h1>

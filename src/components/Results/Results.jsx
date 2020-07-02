@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom'
-import './Results.scss'
+import { Link } from 'react-router-dom';
+import './Results.scss';
 import styled, { withTheme } from 'styled-components';
 import { resultBackgroundColor, resultTextColor } from '../../theme';
 
@@ -12,7 +12,7 @@ function Results(props) {
 
     color: ${resultTextColor};
 
-  `;
+    `;
 
     let cityList = props.cityList
 
