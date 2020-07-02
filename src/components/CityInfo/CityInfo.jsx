@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import './CityInfo.scss'
+import './CityInfo.scss';
 
 function CityInfo(props) {
 
@@ -11,14 +11,12 @@ function CityInfo(props) {
     useEffect( () => {
         const aqCityLocationAPI = `https://api.airvisual.com/v2/city?city=${city}&state=${state}&country=USA&key=${process.env.REACT_APP_API_KEY}`
         const makeApiCall = async () => {
-          const res = await fetch(aqCityLocationAPI)
-          const json = await res.json()
-          setCityInfo(json.data)
+            const res = await fetch(aqCityLocationAPI)
+            const json = await res.json()
+            setCityInfo(json.data)
         }
         makeApiCall()
-      }, [city, state])
-
-      console.log(cityInfo)
+    }, [city, state])
 
       let currentInfo = cityInfo ? cityInfo.current: null
 

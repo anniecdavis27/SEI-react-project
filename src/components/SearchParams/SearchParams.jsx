@@ -8,7 +8,7 @@ function SearchParams(props) {
     const Button = styled.button`
     background: ${buttonBackgroundColor};
     color: ${buttonTextColor};
-  `;
+    `;
 
     const [state, setState] = useState('California')
     const [cityValue, setCityValue] = useState('')
@@ -30,9 +30,7 @@ function SearchParams(props) {
         props.handleFilterClick()
         setCityValue('')
     }
-
-
-
+    
     if (!stateList) {
         return <option>Loading...</option>
     }   let selectState = stateList.map(state => {

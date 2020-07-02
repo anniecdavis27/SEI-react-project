@@ -18,24 +18,21 @@ maincn: main pollutant for Chinese AQI
 ## Technologies
 HTML <br />
 CSS<br />
-SCSS<br />
 JavaScript<br />
 React<br />
     - Hooks<br />
     - Router<br />
-    - (Portals, time dependent)<br />
-Redux
-
+    - Portals<br />
 
 ## Component Map:
 
-https://flic.kr/p/2jfkcDs
+https://flic.kr/p/2jhpSxQ
 
 ## Wireframes:
 
 https://flic.kr/s/aHsmP58TYX
 
-## API statuses: (copied from Imsomnia)
+## API statuses:
 
 ### States:
 ```
@@ -110,18 +107,16 @@ https://flic.kr/s/aHsmP58TYX
 ##  MVP
 | Task | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Wireframes: Mobile | H | 1 | 40min | 40min |
-| Wireframes: Desktop | H | 1 | -- | -- |
+| Wireframes | H | 1 | 40min | 40min |
 | Build out Component Structure | H | 1 | 1h | 1h |
-| Build out routing| H | 1.5 | -- | -- |
-| Build out .env file for keys | H | .5 | -- | -- |
-| Call APIs and parse data | H | 5 | -- | --|
-| Build custom dropdown hook | M | 1 | -- | -- |
-| Pass data to appropriate Components | H | 4 | -- | -- |
-| Dark Mode | L | 2 | -- | -- |
-| Modal | L | 1 | -- | -- |
-| Styling | H | 10 | -- | -- |
-| Total | H | 45 | 44 | 44 |
+| Build out routing| H | 1.5 | 1 | 1 |
+| Build out .env file for keys | H | .5 | .25 | .25 |
+| Call APIs and parse data | H | 5 | 15 | 15 |
+| Pass data to appropriate Components | H | 4 | 5 | 5 |
+| Dark Mode | L | 2 | 6 | 6 |
+| Modal | L | 1 | 1.5 | 1.5 |
+| Styling | H | 10 | 5 | 5 |
+| Total | H | 45 | 44 | 34.75 |
 
 ## Components: 
 
@@ -133,10 +128,55 @@ https://flic.kr/s/aHsmP58TYX
 | City Info | This component routes to a page that shows all the data for the city selected |
 | Modal | This is a modal that will pop up to let user know they are leaving the app when they click the link to my portfolio to demonstrate my understanding of portals |
 | Results | This component structures each data item in the results container |
-| Results Container | This is the component that holds all of the rendered search items from the search params |
 | Search Page | This is the search page that holds the search parameters as well as the results container |
 | Search Params | This component holds all of the search parameters |
-| useDropdown | Custom hook that sets the dropdown for each of the parameters in Search Params. Not technically a component, but a significant piece of code |
+| Theme Context | Sets the context for Dark Mode |
+| Header | Holds all the code for the animated nav bar |
+| Footer | Self explanatory |
 
 
 ## Code Snippets:
+
+All of the Code from Dark Mode
+
+#### Portals
+
+```
+const modalRoot = document.getElementById("modal");
+
+const Modal = ({ children }) => {
+    const elRef = useRef(null);
+    if (!elRef.current) {
+        elRef.current = document.createElement("div");
+    }
+
+    useEffect(() => {
+        modalRoot.appendChild(elRef.current);
+        return () => modalRoot.removeChild(elRef.current);
+    }, []);
+
+    return createPortal(<div>{children}</div>, elRef.current);
+};
+
+export default Modal;
+
+```
+
+#### Dark Mode
+
+```
+const [themeState, setThemeState] = useState({
+        mode: 'light'
+    });
+
+    const Wrapper = styled.div`
+        background-color: ${backgroundColor};
+        color: ${textColor};
+        border: ${textColor};
+    `;
+
+    const toggle = () => {
+        const mode = (themeState.mode === 'light' ? `dark` : `light`);
+        setThemeState({ mode: mode });
+    };
+    ```
