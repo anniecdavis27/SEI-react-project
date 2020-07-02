@@ -2,23 +2,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Results.scss'
+import styled, { withTheme } from 'styled-components';
+import { resultBackgroundColor, resultTextColor } from '../../theme';
 
 function Results(props) {
 
-    // let cityList = props.cityList
+    const Result = styled.h2`
+    background: ${resultBackgroundColor};
 
-    // console.log(cityList)
-    // const city = props.cityList.filter(element => element.city)[0]
+    color: ${resultTextColor};
 
-    // console.log(city)
+  `;
+
     let cityList = props.cityList
 
     let resultsList = props.newCityList 
-    console.log(resultsList)
-
-    // const restoreState = props.restoreState
-
-    //console.log(cityList)
 
     if (!cityList) {
         return <h1>loading</h1>
@@ -30,9 +28,9 @@ function Results(props) {
             }
 
             return (
-            <div key={item} className="city-item">
+            <Result key={item} className="city-item">
                 <Link to={"/city/" + item} onClick={onClickMultiTask} className='city-item-link'><br></br>{item}</Link>
-            </div>
+            </Result>
             );
         });
 
@@ -44,24 +42,17 @@ function Results(props) {
                 }
     
                 return (
-                <h2 key={item} className="city-item">
+                <Result key={item} className="city-item">
                     <Link to={"/city/" + item} onClick={onClickMultiTask} className='city-item-link'><br></br>{item}</Link>
-                </h2>
+                </Result>
                 );
             });
-
-            console.log(updatedDisplayList)
-    
-
-    console.log(displayList)
 
   return (
     <div className='results-container'>
         {resultsList.length > 0 ? updatedDisplayList : displayList}
-        {/* {updatedDisplayList} */}
-        {/* {displayList} */}
     </div>
   );
 }
 
-export default Results;
+export default withTheme(Results);
