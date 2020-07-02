@@ -27,6 +27,7 @@ function CityInfo(props) {
     <div className='city-info'>
        <div className='data-container'>
             <h2 className='city-state'>{cityInfo.city}, {cityInfo.state}, {cityInfo.country}</h2>
+            <p>**changing to dark mode on this page will lose the information displayed. This will be fixed shortly. Apologies for the inconvenience.</p>
             <img src={`https://www.airvisual.com/images/${currentImage}.png`} alt='weather-icon'></img>
             <div className='inner-container'>
                 <div>
